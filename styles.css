@@ -1,0 +1,196 @@
+/* Global CSS Variables */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --card-bg: #fff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --transition-time: 0.5s;
+}
+
+/* Dark Theme Variables */
+.dark-theme {
+    --primary-color: #2980b9;
+    --secondary-color: #27ae60;
+    --bg-color: #222;
+    --text-color: #f5f5f5;
+    --card-bg: #333;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-time), color var(--transition-time);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    margin-bottom: 20px;
+    transition: all var(--transition-time);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+/* Button Styles */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* Theme Switch */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    background-color: white;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.theme-switch-wrapper em {
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-out;
+}
+
+.pulse {
+    animation: pulse 1s infinite;
+}
+
+/* Animation triggered by theme change */
+.theme-transition {
+    animation: fadeIn 1s;
+}
+
+/* Interactive element */
+.interactive-element {
+    width: 100px;
+    height: 100px;
+    background-color: var(--primary-color);
+    margin: 20px auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.interactive-element:hover {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.interactive-element.active {
+    animation: pulse 1s infinite;
+}
