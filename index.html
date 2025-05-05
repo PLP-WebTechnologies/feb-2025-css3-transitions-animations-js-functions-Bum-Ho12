@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switcher with Animations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container fade-in">
+        <header>
+            <h1>Theme Switcher Demo</h1>
+            <p>A demonstration of CSS animations, transitions, and localStorage</p>
+        </header>
+
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider"></div>
+            </label>
+            <em>Toggle Dark Mode</em>
+        </div>
+
+        <div class="card slide-in">
+            <h2>Welcome to the Demo</h2>
+            <p>This simple application demonstrates:</p>
+            <ul>
+                <li>CSS transitions for smooth color changes</li>
+                <li>CSS animations for visual feedback</li>
+                <li>localStorage for saving user preferences</li>
+                <li>JavaScript for dynamic behaviors</li>
+            </ul>
+            <p>Try clicking the elements below and toggling between themes!</p>
+        </div>
+
+        <div class="card slide-in">
+            <h2>Interactive Elements</h2>
+            <p>Click the circle below to see an animation effect:</p>
+            <div class="interactive-element" id="animatedElement">
+                Click Me!
+            </div>
+            <p>Your theme selection will be remembered when you reload the page.</p>
+            <button class="btn" id="resetBtn">Reset Preferences</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
